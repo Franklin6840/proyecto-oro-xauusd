@@ -1,47 +1,29 @@
-# Proyecto ORO
+# Gold Quantitative Trading Model (XAU/USD)
 
-Sistema de apoyo a decisiones intradía para XAU/USD usando machine learning, variables técnicas y eventos macroeconómicos.
+## Overview
+This project presents a quantitative trading model for XAU/USD, integrating high-frequency market data with macroeconomic events to generate data-driven trading signals.
 
-## Objetivo
-Desarrollar un MVP capaz de integrar datos de mercado y calendario macroeconómico para generar señales cuantitativas de apoyo a decisiones intradía sobre oro.
+The model combines technical indicators and macroeconomic features to capture short-term price dynamics and improve intraday trading decision-making.
 
-## Problema
-Las decisiones intradía en XAU/USD están expuestas a ruido de mercado y alta sensibilidad a noticias macroeconómicas, lo que dificulta priorizar entradas y gestionar riesgo de forma objetiva.
+## Problem Statement
+Intraday trading in gold (XAU/USD) is highly sensitive to market noise and macroeconomic announcements, making it difficult to identify high-probability trade setups and manage risk objectively.
 
-## Solución propuesta
-El proyecto integra datos OHLCV de XAU/USD con un calendario macroeconómico, construye variables técnicas y macro, entrena modelos predictivos base y evalúa señales mediante backtesting.
+## Methodology
+- Integration of OHLCV market data (5-minute frequency)
+- Incorporation of macroeconomic calendar events (FED, inflation, employment)
+- Feature engineering:
+  - Technical indicators: returns, RSI, ATR, volatility, moving averages
+  - Macroeconomic features: event timing, impact level, event type
+- Model development:
+  - Logistic Regression
+  - Random Forest
+- Signal generation based on predicted probabilities
+- Backtesting framework to evaluate strategy performance
 
-## Componentes del MVP
-- Integración de datos OHLCV a 5 minutos
-- Integración de calendario macroeconómico
-- Variables técnicas: retornos, momentum, RSI, ATR, volatilidad y medias móviles
-- Variables macro: minutos al evento, impacto y eventos USD/FED/inflación/empleo
-- Modelos base: Logistic Regression y Random Forest
-- Generación de probabilidades, señales y backtesting
+## Technologies
+- Python (Pandas, NumPy, Scikit-learn)
+- Time series data analysis
+- Machine learning for financial markets
 
-## Resultados principales
-- Conjunto de datos modelable final: 12.741 observaciones y 43 variables de entrada
-- Logistic Regression superó a Random Forest
-- Logistic Regression: Accuracy 0.526 y AUC 0.532
-- Random Forest: Accuracy 0.503 y AUC 0.513
-- El MVP aún no alcanza rentabilidad consistente
-- El modelo logístico redujo pérdidas frente a la referencia del mercado
-
-## Archivos del repositorio
-- `gold_ai_trading.py`: script principal
-- `presentacion_proyecto_oro.pptx`: presentación final
-- `presentacion_proyecto_oro.pdf`: versión PDF
-- `resumen_modelos_v2.csv`: resumen de modelos
-- `resumen_backtest_v2.csv`: resumen de backtest
-
-## Próximos pasos
-- Ampliar la ventana histórica de datos
-- Optimizar thresholds de entrada
-- Redefinir el target
-- Incorporar filtro de tendencia
-- Realizar validación walk-forward
-
-## Autor
-Franklin Patricio  
-Universidad de Chile  
-Diplomado en Ciencia de Datos para las Finanzas
+## Objective
+To build a quantitative framework capable of identifying trading opportunities in gold markets using a combination of technical and macroeconomic signals.
